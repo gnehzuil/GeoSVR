@@ -1,0 +1,92 @@
+.\" ** You probably do not want to edit this file directly **
+.\" It was generated using the DocBook XSL Stylesheets (version 1.69.1).
+.\" Instead of manually editing it, you probably should edit the DocBook XML
+.\" source for it and then use the DocBook XSL Stylesheets to regenerate it.
+.TH "3" "3" "14 Aug 2004" "Linux" "Linux"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+libgpsd \- service library for GPS applications
+.SH "SYNOPSIS"
+.PP
+\fB
+C:
+
+#include <gpsd.h>
+
+\fR
+.HP 19
+\fBint\ \fBgpsd_open_dgps\fR\fR\fB(\fR\fBchar\ *\ \fR\fB\fIdgpsserver\fR\fR\fB);\fR
+.HP 15
+\fBvoid\ \fBgpsd_init\fR\fR\fB(\fR\fBstruct\ gps_device_t\ *\fR\fB\fIsession\fR\fR\fB, \fR\fBstruct\ *\ \fR\fB\fIgps_context_t\ *\fR\fR\fB, \fR\fBchar\ *\ \fR\fB\fIdevice\fR\fR\fB);\fR
+.HP 18
+\fBint\ \fBgpsd_activate\fR\fR\fB(\fR\fBstruct\ gps_device_t\ *\fR\fB\fIsession\fR\fR\fB, \fR\fBbool\ \fR\fB\fIreconfigurable\fR\fR\fB);\fR
+.HP 21
+\fBvoid\ \fBgpsd_deactivate\fR\fR\fB(\fR\fBstruct\ gps_device_t\ *\ \fR\fB\fIsession\fR\fR\fB);\fR
+.HP 21
+\fBgps_mask_t\ \fBgpsd_poll\fR\fR\fB(\fR\fBstruct\ gps_device_t\ *\ \fR\fB\fIsession\fR\fR\fB);\fR
+.HP 15
+\fBvoid\ \fBgpsd_wrap\fR\fR\fB(\fR\fBstruct\ gps_device_t\ *\ \fR\fB\fIsession\fR\fR\fB);\fR
+.HP 17
+\fBvoid\ \fBgpsd_report\fR\fR\fB(\fR\fBint\ \fR\fB\fId\fR\fR\fB, \fR\fBconst\ char\ *\ \fR\fB\fIfmt\fR\fR\fB, \fR\fB\fI...\fR\fR\fB);\fR
+.SH "DESCRIPTION"
+.PP
+\fIlibgps\fR
+is a service library which supports querying GPS devices; link it with the linker option \-lgps. There are two interfaces supported in it; one high\-level interface that goes through
+\fBgpsd\fR(1)
+and is intended for concurrent use by several applications, and one low\-level interface that speaks directly with the serial or USB device to which the GPS is attached. This page describes the low\-level interface, which
+\fBgpsd\fR(1)
+itself uses. See
+\fBgpsd\fR(3)
+for a description of the high\-level interface, which is almost certainly what you want.
+.PP
+Calling
+\fBgpsd_init()\fR
+initializes a session structure to hold the data collected by the GPS.
+.PP
+You may optionally specify a DGPS server, either as a string containing a server name or a string containining server name followed by a colon and a port name or number. To specify no DGPS, pass the null pointer.
+.PP
+The second argument must be a context structure. The library will use it for information that need to be shared between sessions; presently this includes the leap\-second correction and possibly a pointer to a shared\-memory segment used to communicate with the Network Time Protocol daemon.
+.PP
+After the session structure has been set up, you may modify some of its members.
+.TP
+gpsd_device
+This member should hold the path name of the device.
+.TP
+baudrate
+Communication speed in bits per second. For NMEA or SiRF devices, the library automatically hunts through all plausible baud rates, stopping on the one where it sees valid packets. By setting this field you can designate a speed to be tried at the front of the hunt queue
+.TP
+raw_hook
+A hook function to be executed on each NMEA sentence or as it is read from the GPS. The data from non\-NMEA GPSes like the EarthMate will be translated to an NMEA sentence before being passed to the hook. Parameters are a pointer to a gps_data structure full of parsed data, the sentence, the length of the sentence, and a rawness level.
+.PP
+\fBgpsd_activate()\fR
+initializes the connection to the GPS.
+\fBgpsd_deactivate()\fR
+closes the connection. These functions are provided so that long\-running programs can release a connection when there is no activity requiring the GPS, and re\-acquire it later.
+.PP
+\fBgpsd_poll()\fR
+queries the GPS and updates the part of the session structure that holds position, speed, GPS signal quality, and other data returned by the GPS. It returns a mask describing which fields have changed.
+.PP
+\fBgpsd_wrap()\fR
+ends the session, implicitly performing a
+\fBgpsd_deactivate()\fR.
+.PP
+The calling application must define one additional function:
+\fBgpsd_report()\fR. The library will use this to issue ordinary status messages. Use first argument of 0 for errors, 1 for ordinary status messages, and 2 or higher for debugging messages.
+.PP
+The low\-level functions do not allocate or free any dynamic storage. They can thus be used in a long\-running application (such as
+\fBgpsd\fR(8)
+itself) with a guarantee that they won't cause memory leaks.
+.SH "BUGS"
+.PP
+Writes to the context structure members are not guarded by a mutex.
+.SH "SEE ALSO"
+.PP
+\fBgpsd\fR(8),
+\fBgps\fR(1),
+\fBlibgpsd\fR(3).
+.SH "AUTHOR"
+.PP
+Eric S. Raymond <esr@thyrsus.com> based partly on earlier work by Remco Treffkorn, Derrick Brashear, and Russ Nelson.

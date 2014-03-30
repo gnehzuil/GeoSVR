@@ -1,0 +1,51 @@
+.\" ** You probably do not want to edit this file directly **
+.\" It was generated using the DocBook XSL Stylesheets (version 1.69.1).
+.\" Instead of manually editing it, you probably should edit the DocBook XML
+.\" source for it and then use the DocBook XSL Stylesheets to regenerate it.
+.TH "LIBGPSMM" "3" "13 May 2005" "Linux" "Linux"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+libgpsmm \- C++ class wrapper for the GPS daemon
+.SH "SYNOPSIS"
+.PP
+\fB
+
+C++:
+
+#include <libgpsmm>
+
+\fR
+.HP 24
+\fBstruct\ gps_data_t\ *\fBopen\fR\fR\fB(\fR\fBchar\ *\fR\fB\fIhost\fR\fR\fB, \fR\fBchar\ *\fR\fB\fIport\fR\fR\fB);\fR
+.HP 24
+\fBstruct\ gps_data_t\ *\fBopen\fR\fR\fB(\fR\fBvoid\fR\fB);\fR
+.HP 25
+\fBstruct\ gps_data_t\ *\fBquery\fR\fR\fB(\fR\fBchar\ *\fR\fB\fIrequest\fR\fR\fB);\fR
+.HP 24
+\fBstruct\ gps_data_t\ *\fBpoll\fR\fR\fB(\fR\fBvoid\fR\fB);\fR
+.HP 17
+\fBint\ \fBset_callback\fR\fR\fB(\fR\fBvoid\ (*\fR\fB\fIhook\fR\fR\fB)(struct\ gps_data_t\ *sentence,\ char\ *buf)\fR\fB);\fR
+.HP 17
+\fBint\ \fBdel_callback\fR\fR\fB(\fR\fBvoid\fR\fB);\fR
+.SH "DESCRIPTION"
+.PP
+\fIlibgpsmm\fR
+is a mere wrapper over
+\fIlibgps\fR. Method names are the same as the analogue C functions. For a detailed description of the functions please read
+\fBlibgps\fR(3).
+\fBopen()\fR
+must be called after class constructor and before any other method (\fBopen()\fR
+is not inside the constructor since it may fail, however constructors have no return value). The analogue of the C function
+\fBgps_close()\fR
+is in the destructor.
+.SH "SEE ALSO"
+.PP
+\fBgpsd\fR(8),
+\fBgps\fR(1),
+\fBlibgps\fR(3).
+.SH "AUTHOR"
+.PP
+Alfredo Pironti <alfredio@users.sourceforge.net>.

@@ -1,0 +1,845 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/geosvr_imp/!svn/ver/86/trunk/lib/gpsd-2.35
+END
+gpsprof.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsprof.xml
+END
+AUTHORS
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/AUTHORS
+END
+display.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/display.c
+END
+bits.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/bits.h
+END
+display.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/display.h
+END
+gpsd.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.xml
+END
+ltmain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/ltmain.sh
+END
+sirfmon.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/sirfmon.c
+END
+xgpsspeed.1
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/xgpsspeed.1
+END
+configure.ac
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/configure.ac
+END
+rtcm-104.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/rtcm-104.xml
+END
+gpspipe.1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/86/trunk/lib/gpsd-2.35/gpspipe.1
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/COPYING
+END
+dgpsip-servers
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/dgpsip-servers
+END
+cgps.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/cgps.c
+END
+gpsd.hotplug
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.hotplug
+END
+gpsprof
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsprof
+END
+xgps.1
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/xgps.1
+END
+subframe.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/subframe.c
+END
+floattest.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/floattest.c
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/setup.py
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/ChangeLog
+END
+gpsctl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsctl.xml
+END
+netlib.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/netlib.c
+END
+cgpxlogger.1
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/cgpxlogger.1
+END
+gpsmm_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsmm_test.cpp
+END
+gpsd.h-tail
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.h-tail
+END
+valgrind-audit
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/valgrind-audit
+END
+py-compile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/py-compile
+END
+xgpsspeed.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/xgpsspeed.c
+END
+libgps.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgps.pc.in
+END
+packet_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/packet_test.c
+END
+gpspipe.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpspipe.c
+END
+config.guess
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/config.guess
+END
+gpsutils.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsutils.c
+END
+gpsd.spec.in
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.spec.in
+END
+garmin.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/garmin.c
+END
+srec.5
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/86/trunk/lib/gpsd-2.35/srec.5
+END
+serial.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/serial.c
+END
+xgps.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/xgps.c
+END
+gpsd.8
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.8
+END
+isgps.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/isgps.c
+END
+gpspipe.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpspipe.xml
+END
+INSTALL
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/INSTALL
+END
+gpsd.usermap
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.usermap
+END
+gpsd_config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd_config.h.in
+END
+timebase.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/timebase.h
+END
+gpsfake.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsfake.xml
+END
+gps.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gps.py
+END
+libgps.3
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgps.3
+END
+cgpxlogger.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/cgpxlogger.c
+END
+libgpsd.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgpsd.xml
+END
+gpsd.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.php
+END
+italk.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/italk.c
+END
+gps.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gps.xml
+END
+italk.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/italk.h
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/README
+END
+tsip.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/tsip.c
+END
+hex.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/hex.c
+END
+dgpsip.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/dgpsip.c
+END
+gpsfake.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsfake.py
+END
+rtcmdecode.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/rtcmdecode.xml
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/Makefile.am
+END
+aclocal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/aclocal.m4
+END
+install-sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/install-sh
+END
+gpsd.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.c
+END
+gpsprof.1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsprof.1
+END
+gpscat.1
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpscat.1
+END
+gpsfake
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsfake
+END
+valgrind-suppressions
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/valgrind-suppressions
+END
+Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/Makefile.in
+END
+depcomp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/depcomp
+END
+driver_proto.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/driver_proto.c
+END
+drivers.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/drivers.c
+END
+libgps.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgps.c
+END
+gpsflash.1
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/86/trunk/lib/gpsd-2.35/gpsflash.1
+END
+geoid.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/geoid.c
+END
+libgpsmm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgpsmm.xml
+END
+libgpsmm.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgpsmm.3
+END
+sirfmon.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/sirfmon.xml
+END
+NEWS
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/NEWS
+END
+packet_states.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/packet_states.h
+END
+gpsd.h-head
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd.h-head
+END
+sirf.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/sirf.c
+END
+rtcm.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/rtcm.c
+END
+gps.1
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gps.1
+END
+rtcm.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/rtcm.h
+END
+nmea_parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/nmea_parse.c
+END
+gpsctl.1
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsctl.1
+END
+gpsd_dbus.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd_dbus.c
+END
+report.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/report.c
+END
+dgnss.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/dgnss.c
+END
+gpsd_dbus.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsd_dbus.h
+END
+TachometerP.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/TachometerP.h
+END
+striplog
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/striplog
+END
+strl.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/strl.c
+END
+rtcmdecode.1
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/rtcmdecode.1
+END
+configure
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/configure
+END
+bits_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/bits_test.c
+END
+packet.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/packet.c
+END
+gpsflash.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsflash.c
+END
+libgpsd.pc.in
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgpsd.pc.in
+END
+srec.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/srec.xml
+END
+gpsflash.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsflash.h
+END
+config.sub
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/config.sub
+END
+libgpsmm.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgpsmm.h
+END
+sirfflash.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/sirfflash.c
+END
+gpspacket.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpspacket.c
+END
+xgps.ad
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/xgps.ad
+END
+evermore.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/evermore.c
+END
+gpsflash.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsflash.xml
+END
+rtcm-104.5
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/rtcm-104.5
+END
+bsd-base64.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/bsd-base64.c
+END
+autogen.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/autogen.sh
+END
+sirfmon.1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/sirfmon.1
+END
+Tachometer.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/Tachometer.c
+END
+ntrip.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/ntrip.c
+END
+libgpsd_core.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgpsd_core.c
+END
+gpsctl.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsctl.c
+END
+libgps.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgps.xml
+END
+gpxlogger.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpxlogger.c
+END
+gps.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gps.h
+END
+gpsfake.1
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpsfake.1
+END
+ubx.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/ubx.c
+END
+bsd-base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/bsd-base64.h
+END
+Tachometer.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/Tachometer.h
+END
+gpscat
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/gpscat
+END
+srecord.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/srecord.c
+END
+ubx.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/ubx.h
+END
+libgpsd.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/libgpsd.3
+END
+xgpsspeed.ad
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/xgpsspeed.ad
+END
+xgpsspeed.icon
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/xgpsspeed.icon
+END
+rtcmdecode.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/rtcmdecode.c
+END
+ntpshm.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/ntpshm.c
+END
+zodiac.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/zodiac.c
+END
+cgps.1
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/cgps.1
+END
+navcom.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/navcom.c
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/TODO
+END
+missing
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/missing
+END
+logextract
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/geosvr_imp/!svn/ver/13/trunk/lib/gpsd-2.35/logextract
+END

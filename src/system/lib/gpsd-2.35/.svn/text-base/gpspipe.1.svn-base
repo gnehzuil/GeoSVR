@@ -1,0 +1,108 @@
+'\" t
+.\"     Title: gpspipe
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 03/17/2011
+.\"    Manual: [FIXME: manual]
+.\"    Source: [FIXME: source]
+.\"  Language: English
+.\"
+.TH "GPSPIPE" "1" "03/17/2011" "[FIXME: source]" "[FIXME: manual]"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gpspipe \- tool to connect to gpsd and retrieve sentences
+.SH "SYNOPSIS"
+.HP \w'\fBgpspipe\fR\ 'u
+\fBgpspipe\fR [\-h] [\-n\ \fIcount\fR] [\-r] [\-R] [\-s\ \fIserial\-device\fR] [\-t] [\-w] [\-v] [\fIserver\fR [\fI:port\fR [\fI:device\fR]]]
+.SH "DESCRIPTION"
+.PP
+gpspipe
+is a tool to connect to
+gpsd
+and output the received sentences to stdout\&. This makes the program useful as a pipe from
+gpsd
+to another program or file\&.
+.PP
+gpspipe
+does not require root privileges, and can be run concurrently with other tools connecting to the local
+gpsd
+without causing problems\&.
+.PP
+The output will consist of one or both of the raw NMEA or native
+gpsd
+sentences\&. Each line can be optionally time stamped\&. There is also an option to exit gracefully after a given count of packets\&.
+.PP
+Optionally a server, tcp port number and remote device can be given\&. If omitted,
+gpspipe
+connects to 127\&.0\&.0\&.1 on the default port (2947) and uses the first device opened by
+gpsd\&.
+.SH "OPTIONS"
+.PP
+\-h makes
+gpspipe
+print a usage message and exit\&.
+.PP
+\-r causes raw NMEA sentences to be output\&.
+.PP
+\-R causes super\-raw (gps binary) data to be output\&. This overrides NMEA and gpsd output modes\&.
+.PP
+\-s option causes the collected data to be written to the specified serial device with setttings 4800 8N1\&. Thus
+gpspipe
+can be used with \-s and \-r options to emulate a serial port hardwired to a GPS that
+gpsd
+is managing\&.
+.PP
+\-w causes native
+gpsdsentences to be output\&.
+.PP
+\-t adds a timestamp to each sentence output\&.
+.PP
+\-n [count] causes [count] sentences to be output\&.
+gpspipe
+will then exit gracefully\&.
+.PP
+\-j makes the program send J=1 to the daemon, requesting fix hold across cycles\&.
+.PP
+\-v causes
+gpspipe
+to show a spinning activity indicator on stderr\&. This is useful if stdout is redirected into a file or a pipe\&. By default the spinner is advanced with every messages written; specifying \-v more than once will double the number of messages required to rotate the spinner\&.
+.PP
+\-V prints the version, then exits\&.
+.PP
+At least one of \-R \-r or \-w must be specified\&.
+.SH "EXAMPLE"
+.PP
+When
+gpsd is running
+\fBgpspipe \-r \-n 100\fR
+will send one hundred raw NMEA sentences to standard output, then exit\&.
+.SH "AUTHOR"
+.PP
+Gary E\&. Miller
+gem@rellim\&.com\&. There is a project page for
+gpsd
+\m[blue]\fBhere\fR\m[]\&\s-2\u[1]\d\s+2\&.
+.SH "NOTES"
+.IP " 1." 4
+here
+.RS 4
+\%http://gpsd.berlios.de/
+.RE

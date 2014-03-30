@@ -1,0 +1,69 @@
+.\" ** You probably do not want to edit this file directly **
+.\" It was generated using the DocBook XSL Stylesheets (version 1.69.1).
+.\" Instead of manually editing it, you probably should edit the DocBook XML
+.\" source for it and then use the DocBook XSL Stylesheets to regenerate it.
+.TH "GPSCAT" "1" "12/08/2006" "16 Nov 2006" "16 Nov 2006"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+gpscat \- dump the output from a GPS
+.SH "SYNOPSIS"
+.HP 7
+\fBgpscat\fR [\-s\ \fIspeed\fR] [\-p] [\-t] \fIserial\-port\fR
+.SH "DESCRIPTION"
+.PP
+gpscat
+is a simple program for logging and packetizing GPS data streams. It takes input from a specified file or serial device (presumed to have a GPS attached) and reports to standard output. The program runs until end of input or ot is interrupted by ^C or other means.
+.PP
+In raw mode (the default)
+gpscat
+simply dumps its input to standard output. Nonprintable characters are rendered as hexadecimal string escapes, except for CR followed by LF or LF preceded by CR.
+.PP
+In packetizing mode,
+gpscat
+uses the same code as
+\fBgpsd\fR(8)'s packet sniffer to break the input into packets. Packets are reported one per line; line breaks in the packets themselves are escaped.
+.PP
+This program is useful as a sanity checker when examining a new device. It can be used as a primitive NMEA logger, but beware that (a) interrupting it likely to cut off output in mid\-sentence, and (b) to avoid displaying incomplete NMEA sentences right up next to shell prompts that often contain a $, raw mode always emits an extra final linefeed.
+.PP
+Also, be aware that packetizing mode will produce useless results \(em probably consuming the entirety of input and appearing to hang \(em if it is fed data that is not a sequence of packets of one of the known types.
+.PP
+The program accepts the following options:
+.TP
+\-p
+Invoke packetizer mode.
+.TP
+\-s
+Set the port's baud rate (and optionally its parity and stop bits) before reading. Argument should begin with one of the normal integer baud rates (300, 1200, 4800, 9600, 19200, 38400, etc.). It may be followed by an optional suffix [NOE][12] to set parity (None, Even, Odd) and stop bits (1 or 2).
+.TP
+\-t
+Invoke packetizer mode, with the packet type reported before a colon on each line.
+.TP
+\-h
+Display program usage and exit.
+.TP
+\-V
+Display program version and exit.
+.PP
+Specifying \-s 4800N1 is frequently helpful with unknown devices.
+.SH "SEE ALSO"
+.PP
+\fBgpsd\fR(8),
+\fBgps\fR(1),
+\fBlibgps\fR(3),
+\fBlibgpsd\fR(3),
+\fBgpsfake\fR(1).
+\fBgpsprof\fR(1),
+\fBgpsctl\fR(1),
+\fBsirfmon\fR(1).
+.SH "AUTHOR"
+.PP
+Eric S. Raymond
+<esr@thyrsus.com>. There is a project page for
+gpsd[1]\&\fIhere\fR.
+.SH "REFERENCES"
+.TP 3
+1.\ here
+\%http://gpsd.berlios.de/

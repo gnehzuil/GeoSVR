@@ -1,0 +1,182 @@
+'\" t
+.\"     Title: 3
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 14 Aug 2004
+.\"    Manual: Linux
+.\"    Source: Linux
+.\"  Language: English
+.\"
+.TH "3" "3" "14 Aug 2004" "Linux" "Linux"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+libgps \- C service library for communicating with the GPS daemon
+.SH "SYNOPSIS"
+.sp
+.ft B
+.nf
+
+C:
+
+#include <gps\&.h>
+
+.fi
+.ft
+.HP \w'struct\ gps_data_t\ *gps_open('u
+.BI "struct gps_data_t *gps_open(char\ *" "server" ", char\ *\ " "port" ");"
+.HP \w'int\ gps_query('u
+.BI "int gps_query(struct\ gps_data_t\ *" "gpsdata" ", char\ *" "fmt" "\&.\&.\&.);"
+.HP \w'void\ gps_set_raw_hook('u
+.BI "void gps_set_raw_hook(struct\ gps_data_t\ *" "gpsdata" ", void\ (*" "hook" ")(struct\ gps_data_t\ *,\ char\ *buf));"
+.HP \w'int\ gps_poll('u
+.BI "int gps_poll(struct\ gps_data_t\ *" "gpsdata" ");"
+.HP \w'void\ gps_close('u
+.BI "void gps_close(struct\ gps_data_t\ *" "gpsdata" ");"
+.HP \w'void\ gps_set_callback('u
+.BI "void gps_set_callback(struct\ gps_data_t\ *" "gpsdata" ", void\ (*" "callback" ")(struct\ gps_data_t\ *sentence,\ char\ *buf), pthread_t\ *" "handler" ");"
+.HP \w'void\ gps_del_callback('u
+.BI "void gps_del_callback(struct\ gps_data_t\ *" "gpsdata" ", pthread\ *" "handler" ");"
+.HP \w'void\ rtcm_unpack('u
+.BI "void rtcm_unpack(struct\ rtcm_t\ *" "rtcmp" ", char\ *" "buf" ");"
+.sp
+.ft B
+.nf
+
+Python:
+
+import gps
+
+session = gps\&.gps(host="127\&.0\&.0\&.1", port="2947")
+
+session\&.set_raw_hook(raw_hook)
+
+session\&.query(commands)
+
+session\&.poll()
+
+del session
+
+.fi
+.ft
+.SH "DESCRIPTION"
+.PP
+\fBlibgps\fR
+is a service library which supports querying GPS devices; link it with the linker option \-lgps\&. There are two interfaces supported in it; one high\-level interface that goes through
+\fBgpsd\fR(1)
+and is intended for concurrent use by several applications, and one low\-level interface that speaks directly with the serial or USB device to which the GPS is attached\&. This page describes the high\-level interface that is safe for multiple applications to use simultaneously; it is probably the one you want\&. The low\-level interface is documented at
+\fBlibgpsd\fR(3)\&.
+.PP
+Calling
+\fBgps_open()\fR
+initializes a GPS\-data structure to hold the data collected by the GPS, and returns a socket attached to
+\fBgpsd\fR(1)\&.
+\fBgps_open()\fR
+returns NULL on errors\&. errno is set depending on the error returned from the the socket layer; see
+gps\&.h
+for values and explanations\&.
+.PP
+\fBgps_close()\fR
+ends the session\&.
+.PP
+\fBgps_poll()\fR
+accepts a response, or sequence of responses, from the daemon and interprets it as though it were a query response (the return value is as for a query)\&.
+\fBgps_poll()\fR
+returns the validity mask of the received structure\&. This function does a blocking read waiting for data from the daemon; it returns 0 for success, or \-1 on a Unix\-level read error\&.
+.PP
+\fBgps_query()\fR
+writes a command to the daemon, accepts a one\-line response, and updates parts of the GPS\-data structure that correspond to data changed since the last call\&. The second argument must be a format string containing letters from the command set documented at
+\fBgpsd\fR(1)\&. It may have % elements as for
+\fBsprintf\fR(3), which will be filled in from any following arguments\&. This function returns a 0 on success, or a \-1 if there was a Unix\-level read error\&.
+.PP
+\fBgps_set_raw_hook()\fR
+takes a function you specify and run it (synchronously) on the raw data pulled by a
+\fBgps_query()\fR
+or
+\fBgps_poll()\fR
+call\&. The arguments passed to this hook will be a pointer to a structure containing parsed data, and a buffer containining the raw
+gpsd
+response\&.
+.PP
+\fBgps_set_callback()\fR
+takes a function you specify and runs it asynchronously each time new data arrives from
+gpsd, using POSIX threads\&. For example, you can call gps_set_callback(gpsdata, my_function, handler) once in your program, and from there on your gpsdata structure will be parsed by your
+\fBmy_function()\fR
+each time new data are available\&.
+\fBmy_function()\fR
+could change some global variables in your program based on received data; it is your responsibility to ensure that your program uses mutexes or other mechanisms to avoid race conditions\&.
+.PP
+\fBgps_del_callback()\fR
+deregisters the callback function previously set with
+\fBgps_set_callback()\fR\&. After the invocation of this function no operation will be done when new data arrives\&.
+.PP
+Consult
+gps\&.h
+to learn more about the data members and associated timestamps\&. Note that information will accumulate in the session structure over time, and the \*(Aqvalid\*(Aq field is not automatically zeroed by each poll\&. It is up to the client to zero that field when appropriate and to keep an eye on the fix and sentence timestamps\&.
+.PP
+The
+\fBrtcm_unpack()\fR
+will be useful when you are connected to an RTCM\-104 source in raw mode\&. Use it as part of a raw hook, calling it with the address of the
+struct rtcm_t
+element of your session structure buffer as first argument and the buffer as the second\&. It will unpack a line of RTCM data into the structure\&. This function returns 0 when it has read the last line of an RTCM\-104 message, a positive int when it expects more dump lines, and a negative int on parse failure\&. You must zero out the
+struct rtcm_t
+each time before this function is called on a new header (H) line, as it relies on the message type field being initially zero and uses it to track what kind of following line is expected\&.
+.PP
+The Python implementation supports the same facilities as the C library\&.
+\fBgps_open()\fR
+is replaced by the initialization of a gps session object; the other calls are methods of that object, and have the same names as the corresponding C functions\&. Resources within the session object will be properly released when it is garbage\-collected\&.
+.SH "CODE EXAMPLE"
+.PP
+The following is an excerpted and simplified version of the libgps interface code from
+\fBgps\fR(1)\&. The function
+\fBhandle_input()\fR
+is a trivial pies of code that calls gps_poll(gpsdata)\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+    gpsdata = gps_open(server, port);
+
+    build_gui(toplevel);
+
+    gps_set_raw_hook(gpsdata, update_panel);
+	
+    (void)gps_query(gpsdata, "w+x\en");
+
+    (void)XtAppAddInput(app, gpsdata\->gps_fd, 
+		  (XtPointer)XtInputReadMask, handle_input, NULL);
+    (void)XtAppMainLoop(app);
+
+    (void)gps_close(gpsdata);
+.fi
+.if n \{\
+.RE
+.\}
+.SH "SEE ALSO"
+.PP
+
+\fBgpsd\fR(8),
+\fBgps\fR(1),
+\fBlibgps\fR(3)\&.
+\fBlibgpsmm\fR(3)\&.
+.SH "AUTHOR"
+.PP
+Eric S\&. Raymond <esr@thyrsus\&.com>, Thread\-callback methods in the C binding added by Alfredo Pironti <alfredo@users\&.sourceforge\&.net>\&.
