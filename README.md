@@ -16,6 +16,7 @@ Master thesis
 http://os.cs.tsinghua.edu.cn/research/thesis/lzheng11
 首都师范大学硕士学位论文：基于地图的车载自组网单播路由协议设计与实现
 
+Thesis for Master degree in Capital Normal University: Design and implementation of a VANET unicast routing protocol based on electronic map.
 
 Source code for GeoSVR on NS2 and Linux
 ==============
