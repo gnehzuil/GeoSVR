@@ -25,9 +25,9 @@ devices or clients attached, connected to a control socket.
 
 TestSession has methods to attach and detch fake GPSes. The
 TestSession class simulates GPS devices for you with objects composed
-from a pty and a class instance that cycles sentences into the master side
-from some specified logfile; gpsd reads the slave side.  A fake GPS is
-identified by the string naming its slave device.
+from a pty and a class instance that cycles sentences into the main side
+from some specified logfile; gpsd reads the subordinate side.  A fake GPS is
+identified by the string naming its subordinate device.
 
 TestSession also has methods to start and end client sessions.  Daemon
 responses to a client are fed to a hook function which, by default,
@@ -262,9 +262,9 @@ class FakeGPS:
         # FIXME: explicit arguments should probably override this
         #if self.testload.serial:
         #    (speed, databits, parity, stopbits) = self.testload.serial
-        (self.master_fd, self.slave_fd) = pty.openpty()
-        self.slave = os.ttyname(self.slave_fd)
-        ttyfp = open(self.slave, "rw")
+        (self.main_fd, self.subordinate_fd) = pty.openpty()
+        self.subordinate = os.ttyname(self.subordinate_fd)
+        ttyfp = open(self.subordinate, "rw")
         (iflag, oflag, cflag, lflag, ispeed, ospeed, cc) = termios.tcgetattr(ttyfp.fileno())
         cc[termios.VMIN] = 1
 	cflag &= ~(termios.PARENB | termios.PARODD | termios.CRTSCTS)
@@ -290,20 +290,20 @@ class FakeGPS:
     def read(self):
         "Discard control strings written by gpsd."
         # A tcflush implementation works on Linux but fails on OpenBSD 4.
-        termios.tcflush(self.master_fd, termios.TCIFLUSH)
+        termios.tcflush(self.main_fd, termios.TCIFLUSH)
         # Alas, the FIONREAD version also works on Linux and fails on OpenBSD.
         #try:
         #    buf = array.array('i', [0])
-        #    fcntl.ioctl(self.master_fd, termios.FIONREAD, buf, True)
+        #    fcntl.ioctl(self.main_fd, termios.FIONREAD, buf, True)
         #    n = struct.unpack('i', buf)[0]
-        #    os.read(self.master_fd, n)
+        #    os.read(self.main_fd, n)
         #except IOError:
         #    pass
 
     def feed(self):
         "Feed a line from the contents of the GPS log to the daemon."
         line = self.testload.sentences[self.index % len(self.testload.sentences)]
-        os.write(self.master_fd, line)
+        os.write(self.main_fd, line)
         time.sleep((WRITE_PAD * len(line)) / self.speed)
         self.index += 1
 
@@ -434,11 +434,11 @@ class TestSession:
                 newgps.go_predicate = pred
             elif self.default_predicate:
                 newgps.go_predicate = self.default_predicate
-            self.fakegpslist[newgps.slave] = newgps
+            self.fakegpslist[newgps.subordinate] = newgps
             self.append(newgps)
             newgps.exhausted = 0
-        self.daemon.add_device(newgps.slave)
-        return newgps.slave
+        self.daemon.add_device(newgps.subordinate)
+        return newgps.subordinate
     def gps_remove(self, name):
         "Remove a simulated GPS from the daemon's search list."
         self.progress("gpsfake: gps_remove(%s)\n" % name)
@@ -508,11 +508,11 @@ class TestSession:
                     # to get gpsd's response before we call cleanup()
                     if chosen.exhausted and (time.time() - chosen.exhausted > TestSession.CLOSE_DELAY):
                         self.remove(chosen)
-                        self.progress("gpsfake: GPS %s removed\n" % chosen.slave)
+                        self.progress("gpsfake: GPS %s removed\n" % chosen.subordinate)
                     elif not chosen.go_predicate(chosen.index, chosen):
                         if chosen.exhausted == 0:
                             chosen.exhausted = time.time()
-                            self.progress("gpsfake: GPS %s ran out of input\n" % chosen.slave)
+                            self.progress("gpsfake: GPS %s ran out of input\n" % chosen.subordinate)
                     else:
                         chosen.feed()
                 elif isinstance(chosen, gps.gps):
